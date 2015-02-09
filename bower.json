@@ -1,0 +1,19 @@
+{
+  "name": "FishHorseBot Website",
+  "version": "1.0.0",
+  "homepage": "https://github.com/asser-dk/FishHorseBot-Website",
+  "authors": [
+    "Asser"
+  ],
+  "description": "Source code for the FishHorseBot website",
+  "main": "App/index.html",
+  "keywords": [
+    "Twitch",
+    "Hitbox",
+    "SexyFishHorse",
+    "FishHorse",
+    "FishHorseBot"
+  ],
+  "license": "MIT License",
+  "private": true
+}
