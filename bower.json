@@ -15,5 +15,8 @@
     "FishHorseBot"
   ],
   "license": "MIT License",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
 }
