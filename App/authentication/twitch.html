@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SexyFishHorse Twitch OAuth callback</title>
+    <script src="../components/jquery/dist/jquery.min.js"></script>
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+    <script src="../configuration.js"></script>
+</head>
+<body>
+<div class="nojs" style="visibility: hidden">
+    <p><strong>This page should only be displayed for a fraction of a second</strong> (litterally) when you are trying
+        to connect the
+        FishHorse Bot with Twitch. After that you should be redirected to the frontpage.</p>
+
+    <p>You are stuck here either because an error occured that we weren't prepared for, or because you have disabled
+        JavaScript. If you are tech savy you could try and check your browsers log window (normally accessed by pressing
+        F12). In either case you should <a href="../">return to the frontpage</a>.</p></div>
+<script>
+    $(function () {
+
+        $('.nojs').hide();
+
+        var configuration = new Configuration();
+
+        window.clientId = configuration.twitch.api.clientId;
+
+        Twitch.init({clientId: clientId}, function (error, status) {
+            if (error) {
+                console.error(error);
+
+                alert('An error occured while attempting to connect to twitch. Please try again. ' +
+                'If the error persists then please file a bug report.');
+            }
+
+            if (status.authenticated) {
+                localStorage.twitchAccessToken = Twitch.getToken();
+            }
+
+            window.location.href = '../';
+
+            $('.nojs').show();
+        });
+    });
+</script>
+</body>
+</html>
