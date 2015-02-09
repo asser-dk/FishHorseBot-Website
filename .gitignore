@@ -1,3 +1,5 @@
-
 .idea/
 node_modules/
+App/components/*
+
+App/configuration.js
